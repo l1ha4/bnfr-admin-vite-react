@@ -3,6 +3,7 @@
 html {
   --background-color: #121212;
   --text-color: #f3f3f3;
+  --block-color: #2b2b2b;
 }
 
 html[data-theme='dark'] {

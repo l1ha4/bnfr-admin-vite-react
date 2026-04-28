@@ -4,9 +4,9 @@ import type { FC } from 'react'
 import cl from './DefaultPage.module.scss'
 
 const DefaultPage: FC = () => {
-  
+
   return (
-  <div className={cl.page}>
+  <div className={`page ${cl.page}`}>
     DefaultPage
   </div>
 )

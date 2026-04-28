@@ -1,10 +1,9 @@
 import type { IRouterPage } from '@/types/default'
-
-import DefaultPage from '@/pages/DefaultPage/DefaultPage'
+import AuthPage from '@/pages/AuthPage/AuthPage'
 
 
 export const publicPageRoutes: IRouterPage[] = [
-  { path: '/', element: DefaultPage },
+  { path: '/', element: AuthPage },
 ]
 
 export const authPageRoutes: IRouterPage[] = []
