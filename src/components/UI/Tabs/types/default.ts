@@ -1,0 +1,1 @@
+export type IRouterTabTypes = Array<[string, FC]>

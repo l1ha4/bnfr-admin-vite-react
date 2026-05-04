@@ -1,0 +1,11 @@
+/* src\pages\DefaultPage\DefaultPage.module.scss */
+
+.page {
+  .servers {
+    margin-left: 50px;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+}

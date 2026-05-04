@@ -7,14 +7,22 @@ import {
   publicPageRoutes,
   authPageRoutes,
 } from './router/route.ts'
-
+import { useAuth } from './context/AuthContext.tsx'
 
 function AppRouter() {
-  //TODO сделать реальный статус авторизации юзера
-  const currentUser = null
+  const { isAuth: currentUser } = useAuth()
+
   const routes = useMemo(() => {
     const scopedRoutes = currentUser ? privatePageRoutes : authPageRoutes
-    return [...publicPageRoutes, ...scopedRoutes]
+
+    const publicWithoutDuplicates = publicPageRoutes.filter(
+      (publicRoute) =>
+        !scopedRoutes.some(
+          (scopedRoute) => scopedRoute.path === publicRoute.path,
+        ),
+    )
+
+    return [...scopedRoutes, ...publicWithoutDuplicates]
   }, [currentUser])
 
   return (
@@ -27,4 +35,3 @@ function AppRouter() {
 }
 
 export default AppRouter
-

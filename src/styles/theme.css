@@ -15,3 +15,9 @@ html[data-theme='light'] {
   --background-color: #e4e6eb;
   --text-color: #333;
 }
+
+html[data-route-theme='discord'] {
+  --background-color: #36373e;
+  --subtitle-color: #848484;
+  --block-color: #2C2D32;
+}

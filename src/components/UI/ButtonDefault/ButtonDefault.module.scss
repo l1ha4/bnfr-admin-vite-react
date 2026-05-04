@@ -1,19 +1,47 @@
 /* src\components\UI\ButtonDefault\ButtonDefault.module.scss */
 
 .component {
-  font-size: 20px;
-  background-color: var(--block-color);
+  font-size: 18px;
+  font-weight: 600;
+  background: linear-gradient(
+    135deg,
+    var(--block-color),
+    rgba(43, 43, 43, 0.9)
+  );
   color: var(--text-color);
-  padding: 10px 20px;
-  border-radius: 12px;
-  transition: all 0.3s ease;
+  padding: 14px 28px;
+  border: 2px solid rgba(243, 243, 243, 0.2);
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(10px);
 
   &:hover {
-    background-color: var(--text-color);
-    color: var(--block-color);
+    background: linear-gradient(
+      135deg,
+      rgba(243, 243, 243, 0.15),
+      rgba(243, 243, 243, 0.1)
+    );
+    border-color: rgba(243, 243, 243, 0.4);
+    color: var(--text-color);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+    transform: translateY(-2px);
   }
 
   &:active {
-    transform: scale(0.95);
+    transform: scale(0.98);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  }
+
+  @media (max-width: 768px) {
+    font-size: 16px;
+    padding: 12px 24px;
+  }
+
+  @media (max-width: 480px) {
+    font-size: 15px;
+    padding: 11px 20px;
+    border-radius: 8px;
   }
 }

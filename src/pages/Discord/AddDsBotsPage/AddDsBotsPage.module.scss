@@ -1,0 +1,21 @@
+/* src\pages\DiscordBots\AddDsBotsPage\AddDsBotsPage.module.scss */
+
+.page {
+}
+
+.form {
+  margin: 40px;
+
+  h3 {
+    margin-bottom: 10px;
+  }
+
+  .button {
+    margin-top: 20px;
+  }
+
+  .error {
+    color: rgb(255, 83, 83);
+    margin-top: 10px;
+  }
+}

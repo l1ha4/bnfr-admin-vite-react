@@ -1,20 +1,14 @@
-// src\example\InputDefault\InputDefault.tsx
+// src\components\UI\InputDefault\InputDefault.tsx
 
-import type { FC } from 'react'
+import type { FC, InputHTMLAttributes } from 'react'
 import cl from './InputDefault.module.scss'
 
-interface InputDefaultProps {
+type InputDefaultProps = InputHTMLAttributes<HTMLInputElement> & {
   addClass?: string
-  placeholder: string
 }
 
-const InputDefault: FC<InputDefaultProps> = ({ placeholder, addClass }) => {
-  return (
-    <input
-      className={`${cl.component} ${addClass}`}
-      placeholder={placeholder}
-    />
-  )
+const InputDefault: FC<InputDefaultProps> = ({ addClass, ...props }) => {
+  return <input className={`${cl.component} ${addClass}`} {...props} />
 }
 
 export default InputDefault

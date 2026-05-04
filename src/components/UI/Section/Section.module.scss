@@ -1,0 +1,17 @@
+/* src\components\UI\Section\Section.module.scss */
+
+.component {
+  width: 782px;
+  height: 80px;
+  border-radius: 8px;
+  border: 1px solid #aaafd020;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px 30px;
+  h3{
+    margin-bottom: 2px;
+    font-size: 20px;
+    font-weight: 600;
+  }
+}

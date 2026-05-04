@@ -1,0 +1,26 @@
+/* src\pages\DiscordBots\DsBotPage\DsBotPage.module.scss */
+
+.page {
+  
+
+  .error {
+    margin-top: 40px;
+    margin-left: 40px;
+    color: rgb(255, 78, 78);
+  }
+
+  .servers {
+    margin-top: 40px;
+    margin-left: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .sections {
+    display: flex;
+    gap: 40px;
+    margin-left: 50px;
+    margin-top: 40px;
+  }
+}

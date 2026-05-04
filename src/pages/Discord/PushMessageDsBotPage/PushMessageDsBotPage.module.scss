@@ -1,0 +1,81 @@
+/* src\pages\DiscordBots\PushMessageDsBotPage\PushMessageDsBotPage.module.scss */
+
+.page {
+  .content {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    min-height: 719px;
+  }
+
+  .channels {
+    width: 290px;
+    min-height: 100%;
+    background-color: var(--block-color);
+
+    h3 {
+      padding: 20px;
+      font-size: 18px;
+      color: var(--subtitle-color);
+    }
+  }
+
+  .block_messages {
+    width: 100%;
+    padding: 20px;
+    min-height: 100%;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  .block_create_message {
+    width: 920px;
+    height: 600px;
+    background-color: var(--block-color);
+    border-radius: 7px;
+
+    h3 {
+      margin-top: 20px;
+      margin-left: 30px;
+      font-size: 24px;
+      color: var(--text-color);
+    }
+
+    .block_input {
+      margin-top: 20px;
+      margin-left: 30px;
+      width: 860px;
+
+      h4 {
+        margin-bottom: 10px;
+      }
+
+      .button {
+        margin-top: 20px;
+      }
+    }
+  }
+
+  .list_channels {
+    width: 290px;
+    min-height: 100%;
+    background-color: var(--block-color);
+    border-radius: 7px;
+
+    h3 {
+      padding: 20px;
+      font-size: 18px;
+      color: var(--subtitle-color);
+    }
+
+    .channel_item {
+      padding: 10px 20px;
+      cursor: pointer;
+    }
+
+    .selected {
+      background-color: #4f4f4f8b;
+      color: #fff;
+    }
+  }
+}

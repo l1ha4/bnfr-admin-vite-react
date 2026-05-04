@@ -1,0 +1,17 @@
+/* src\example\DefaultComponentInterface\InputDefault.module.scss */
+
+.component {
+  margin-top: 40px;
+  margin-left: 50px;
+  h1 {
+    margin-top: 20px;
+    font-size: 36px;
+    font-weight: 600;
+  }
+  h2 {
+    color: var(--subtitle-color);
+    margin-top: 16px;
+    font-size: 24px;
+    font-weight: 400;
+  }
+}

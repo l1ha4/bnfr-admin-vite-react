@@ -1,0 +1,57 @@
+/* src\components\UI\Discord\MessageDs\MessageDs.module.scss */
+
+.component {
+  width: max-content;
+  display: flex;
+  gap: 15px;
+
+  .avatar {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background-color: var(--text-color);
+  }
+
+  .content {
+    display: flex;
+    flex-direction: column;
+
+    .header {
+      display: flex;
+
+      .username {
+        font-weight: 500;
+        color: var(--text-color);
+      }
+
+      .block_bot {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 2px;
+        margin-left: 2px;
+        width: 32px;
+        height: 16px;
+        border-radius: 2px;
+        background-color: #5865f2;
+
+        span {
+          font-size: 12px;
+          font-weight: 600;
+          margin-bottom: 2px;
+        }
+      }
+
+      .date {
+        margin-top: 3px;
+        margin-left: 8px;
+        font-size: 12px;
+        color: var(--subtitle-color);
+      }
+    }
+
+    .message {
+      padding-top: 4px;
+    }
+  }
+}

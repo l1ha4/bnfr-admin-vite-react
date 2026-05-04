@@ -1,12 +1,55 @@
 .navbar {
-  padding: 16px 50px;
-  background-color: var(--block-color);
-  border-radius: 0px 0px 31.5px 31.5px;
+  padding: 14px 50px;
+  background: linear-gradient(
+    135deg,
+    var(--block-color) 0%,
+    rgba(43, 43, 43, 0.8) 100%
+  );
+  border-bottom: 2px solid rgba(243, 243, 243, 0.1);
+  border-radius: 0px 0px 16px 16px;
   display: flex;
   justify-content: space-between;
-  
-  span {
-    font-size: 24px;
-    font-weight: 600;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  backdrop-filter: blur(10px);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  transition: all 0.3s ease;
+
+  .logo {
+    font-size: 28px;
+    font-weight: 700;
+    background: linear-gradient(
+      120deg,
+      var(--text-color),
+      rgba(243, 243, 243, 0.7)
+    );
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    letter-spacing: -0.5px;
+  }
+
+  .user {
+    margin-right: 10px;
+    font-size: 20px;
+  }
+
+  @media (max-width: 768px) {
+    padding: 16px 16px;
+    border-radius: 0px 0px 12px 12px;
+
+    span {
+      font-size: 22px;
+    }
+  }
+
+  @media (max-width: 480px) {
+    padding: 14px 12px;
+
+    span {
+      font-size: 18px;
+    }
   }
 }
