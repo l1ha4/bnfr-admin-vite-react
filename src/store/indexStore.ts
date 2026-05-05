@@ -1,19 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
-
 import { combineReducers } from 'redux'
-import { listDsBotsReducer } from './dsBots/listDsBots/listDsBots.slice'
-import { listServersDsBotReducer } from './dsBots/listServersDsBot/listServersDsBot.slice'
-import { selectedDsBotReducer } from './dsBots/selectedDsBot/selectedDsBot.slice'
 import type { SelectedDsBotState } from './dsBots/selectedDsBot/selectedDsBot.slice'
-import { listChannelsServerDsBotReducer } from './dsBots/listChannelsServerDsBot/listChannelsServerDsBot.slice'
+import { INDEX_STORE_DS } from './dsBots/indexStoreDs'
 
 const SELECTED_BOT_STORAGE_KEY = 'bnfr:selectedDsBot'
 
 export const rootReducer = combineReducers({
-  dsBots: listDsBotsReducer,
-  listServersDsBot: listServersDsBotReducer,
-  selectedDsBot: selectedDsBotReducer,
-  listChannelsServerDsBot: listChannelsServerDsBotReducer,
+  ...INDEX_STORE_DS,
 })
 
 type RootReducerState = ReturnType<typeof rootReducer>

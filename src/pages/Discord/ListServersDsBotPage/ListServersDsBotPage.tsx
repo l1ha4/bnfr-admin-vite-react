@@ -47,7 +47,11 @@ const ListServersDsBotPage: FC = () => {
               status={null}
               onClick={() => {
                 dispatch(
-                  setSelectedServerId({ id: server.id, name: server.name }),
+                  setSelectedServerId({
+                    id: server.id,
+                    name: server.name,
+                    avatarUrl: server.icon,
+                  }),
                 )
                 navigate(`/discord/bots/bot/servers/server/functions`)
               }}

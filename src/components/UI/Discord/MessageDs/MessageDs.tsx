@@ -7,21 +7,21 @@ import { useCurrentTime } from '@/hooks/useCurrentTime'
 
 interface MessageDsProps {
   addClass?: string
-  username: string
-  text?: string
-  embed: any
+  username?: string
+  content?: { type: 'text' | 'embed'; content: string | any }[]
+  avatarUrl?: string | null
 }
 
-const MessageDs: FC<MessageDsProps> = ({ addClass, username, text, embed }) => {
+const MessageDs: FC<MessageDsProps> = ({ addClass, username, content, avatarUrl }) => {
   const time = useCurrentTime()
 
   return (
     <div className={`${cl.component} ${addClass}`}>
-      <div className={cl.avatar}></div>
+      <div className={cl.avatar} style={{ backgroundImage: `url(${avatarUrl})` }}></div>
       <div className={cl.content}>
         <div className={cl.header}>
           <div>
-            <span className={cl.username}>{username}</span>
+            <span className={cl.username}>{username ?? 'Unknown'}</span>
           </div>
           <div className={cl.block_bot}>
             <span>БОТ</span>
@@ -29,8 +29,21 @@ const MessageDs: FC<MessageDsProps> = ({ addClass, username, text, embed }) => {
           <div className={cl.date}>{time}</div>
         </div>
         <div className={cl.message}>
-          <span className={cl.text}>{text}</span>
-          {embed ? <EmbedBotDs /> : ''}
+          {content && content.length > 0
+            ? content.map((item, index) => {
+                if (item.type === 'text') {
+                  return (
+                    <span key={index} className={cl.text}>
+                      {item.content}
+                    </span>
+                  )
+                }
+                if (item.type === 'embed') {
+                  return <EmbedBotDs key={index} {...item.content} />
+                }
+                return null
+              })
+            : null}
         </div>
       </div>
     </div>

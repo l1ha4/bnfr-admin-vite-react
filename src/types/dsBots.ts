@@ -24,3 +24,11 @@ export interface PushMessageBody {
   channelId: string
   message: string
 }
+
+export interface IEmbedContent {
+  title?: string
+  text?: string
+  colorLinear?: string
+  bigImageUrl?: string
+  smallImageUrl?: string
+}
