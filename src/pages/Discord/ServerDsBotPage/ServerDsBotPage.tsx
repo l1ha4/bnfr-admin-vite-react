@@ -14,16 +14,27 @@ const ServerDsBotPage: FC = () => {
   const navigate = useNavigate()
   const { selectedBotName } = useAppSelector((state) => state.selectedDsBot)
   const { selectedServerName } = useAppSelector((state) => state.selectedDsBot)
-
+  const pathPage = '/discord/bots/bot/servers/server'
   return (
     <div className={`page ${cl.page}`}>
       <FormNavigate
         title={`${dsPages.dsBotServerAction.title} ${selectedBotName} на сервере ${selectedServerName}`}
         subtitle={dsPages.dsBotServerAction.subtitle}
+        returnPath="/discord/bots/bot/servers"
       />
       <div className={cl.tabs}>
-        <TabNavigate arrTabs={[{ label: 'Функции', path: 'functions' }, { label: 'Действия', path: 'actions' }, { label: 'Участники', path: 'members' }]} />
-        <Tabs router={routerTabs} defaultComponent='functions'/>
+        <TabNavigate
+          arrTabs={[
+            { label: 'Функции', path: `${pathPage}/functions` },
+            { label: 'Действия', path: `${pathPage}/actions` },
+            { label: 'Участники', path: `${pathPage}/members` },
+          ]}
+        />
+        <Tabs
+          router={routerTabs}
+          segmentIndex={5}
+          defaultComponent="functions"
+        />
       </div>
     </div>
   )

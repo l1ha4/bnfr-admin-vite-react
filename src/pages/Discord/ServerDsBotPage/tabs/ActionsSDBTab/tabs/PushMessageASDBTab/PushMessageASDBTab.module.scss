@@ -1,0 +1,22 @@
+/* src\pages\Discord\ServerDsBotPage\tabs\ActionsSDBTab\tabs\PushMessageASDBTab\PushMessageASDBTab.module.scss */
+
+.tab {
+  margin-top: 20px;
+  margin-left: 30px;
+  margin-right: 30px;
+
+  h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+  }
+
+  .content {
+    display: flex;
+    justify-content: space-between;
+
+    .previewMessage {
+      width: 578px;
+      height: 384px;
+    }
+  }
+}

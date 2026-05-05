@@ -12,7 +12,8 @@ export const DS_PAGES = [
   {path: 'discord/bots/add', element: AddDsBotsPage},
   {path: 'discord/bots/bot', element: DsBotPage},
   {path: 'discord/bots/bot/servers', element: ListServersDsBotPage},
-  {path: 'discord/bots/bot/servers/server-action', element: ServerDsBotPage},
-  {path: 'discord/bots/bot/servers/server-action/:tabs', element: ServerDsBotPage},
-  {path: 'discord/bots/bot/servers/server-action/push-message', element: PushMessageDsBotPage}
+  {path: 'discord/bots/bot/servers/server', element: ServerDsBotPage},
+  {path: 'discord/bots/bot/servers/server/:tabs', element: ServerDsBotPage},
+  {path: 'discord/bots/bot/servers/server/:tabs/:subTabs', element: ServerDsBotPage},
+  {path: 'discord/bots/bot/servers/server/push-message', element: PushMessageDsBotPage}
 ]

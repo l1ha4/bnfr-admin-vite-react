@@ -1,0 +1,71 @@
+/\*\*
+
+- Пример использования StateTabs компонента
+-
+- StateTabs - это компонент для отображения вкладок на основе состояния компонента,
+- а не на основе URL маршрута (как обычный Tabs).
+-
+- Использование:
+-
+- import { useState } from 'react'
+- import StateTabs from '@components/UI/Tabs/StateTabs'
+- import Tab1 from './tabs/Tab1'
+- import Tab2 from './tabs/Tab2'
+- import Tab3 from './tabs/Tab3'
+-
+- function MyComponent() {
+- const [activeTab, setActiveTab] = useState('tab1')
+-
+- const tabs = [
+-     ['tab1', Tab1],
+-     ['tab2', Tab2],
+-     ['tab3', Tab3],
+- ]
+-
+- return (
+-     <div>
+-       <div className={styles.tabButtons}>
+-         <button
+-           onClick={() => setActiveTab('tab1')}
+-           className={activeTab === 'tab1' ? styles.active : ''}
+-         >
+-           Tab 1
+-         </button>
+-         <button
+-           onClick={() => setActiveTab('tab2')}
+-           className={activeTab === 'tab2' ? styles.active : ''}
+-         >
+-           Tab 2
+-         </button>
+-         <button
+-           onClick={() => setActiveTab('tab3')}
+-           className={activeTab === 'tab3' ? styles.active : ''}
+-         >
+-           Tab 3
+-         </button>
+-       </div>
+-
+-       <StateTabs
+-         tabs={tabs}
+-         activeTab={activeTab}
+-         onTabChange={setActiveTab}
+-         defaultComponent="tab1"
+-       />
+-     </div>
+- )
+- }
+-
+- export default MyComponent
+-
+- Props:
+- - tabs: Array<[string, React.FC]> - массив вкладок, где первый элемент это ключ,
+- второй - компонент
+- - activeTab: string - текущая активная вкладка (ключ)
+- - onTabChange: (tab: string) => void - функция для изменения активной вкладки
+- (примечание: пока что это необязательный параметр, но передается для возможности
+- расширения функциональности в будущем)
+- - defaultComponent?: string - опциональный ключ вкладки по умолчанию,
+- если activeTab не найдена в табах
+  \*/
+
+export const stateTabsExample = 'see comments above'

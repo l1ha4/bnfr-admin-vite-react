@@ -1,19 +1,20 @@
 import React from 'react'
 import { useLocation } from 'react-router-dom'
-import type { IRouterTabTypes } from '../../../types/IRouterTabType'
+import type { IRouterTabTypes } from './types/default'
 
 interface IChildrenTabs {
   router: IRouterTabTypes
   defaultComponent?: string
-  /** Индекс сегмента URL (0 = первый после /), где лежит ключ вкладки. По умолчанию 1 — как у /profile/settings и /login/auth. */
+  /** Индекс сегмента URL (0 = первый после /), где лежит ключ вкладки. По умолчанию использует последний сегмент пути. */
   segmentIndex?: number
 }
 
-function Tabs({ router, defaultComponent, segmentIndex = 1 }: IChildrenTabs) {
+function Tabs({ router, defaultComponent, segmentIndex }: IChildrenTabs) {
   const location = useLocation()
   const pathParts = location.pathname.split('/').filter(Boolean)
-  const tabKey =
-    pathParts.length > segmentIndex ? pathParts[segmentIndex] : undefined
+  const effectiveIndex =
+    segmentIndex !== undefined ? segmentIndex : pathParts.length - 1
+  const tabKey = pathParts[effectiveIndex]
 
   const tabMap = React.useMemo(() => new Map(router), [router])
 

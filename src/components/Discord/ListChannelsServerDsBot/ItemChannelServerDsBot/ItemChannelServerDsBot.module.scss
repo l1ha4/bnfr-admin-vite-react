@@ -1,0 +1,23 @@
+/* src\components\Discord\FormSendMessageDsBot\FormSendMessageDsBot.module.scss */
+
+.component {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 6px 10px;
+  gap: 10px;
+  border-radius: 7px;
+
+  .item {
+    font-size: 24px;
+  }
+
+  .text {
+    font-size: 14px;
+    margin-bottom: 2px;
+    font-weight: 500;
+  }
+  &.active {
+    background-color: #aaafd020;
+  }
+}

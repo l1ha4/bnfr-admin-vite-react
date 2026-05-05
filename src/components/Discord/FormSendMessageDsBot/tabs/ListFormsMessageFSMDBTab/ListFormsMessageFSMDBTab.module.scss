@@ -1,0 +1,25 @@
+/* src\components\Discord\FormSendMessageDsBot\tabs\ListFormsMessageFSMDBTab\ListFormsMessageFSMDBTab.module.scss */
+
+.tab {
+  padding: 20px;
+  .header {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h2 {
+      display: block;
+      margin-bottom: 2px;
+      font-size: 24px;
+    }
+  }
+  .list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
+    .item_list {
+      width: 100%;
+    }
+  }
+}

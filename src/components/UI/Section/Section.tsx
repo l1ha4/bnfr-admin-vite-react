@@ -2,7 +2,7 @@
 
 import type { FC } from 'react'
 import cl from './Section.module.scss'
-import ButtonTransparent from '../ButtonTranparent/ButtonTransparent'
+import ButtonTransparent from '@/components/UI/Transparent/ButtonTransparent/ButtonTransparent'
 
 interface SectionProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   addClass?: string
