@@ -54,14 +54,23 @@ const selectedSendMessageDsBotSlice = createSlice({
     },
     setContentItemFormMessage(
       state,
-      action: PayloadAction<{ index: number; content: string | IEmbedContent }>,
+      action: PayloadAction<{ content: string | IEmbedContent }>,
     ) {
       if (
         state.listItemsFormMessage &&
-        state.listItemsFormMessage[action.payload.index]
+        state.listItemsFormMessage[state.selectedItemFormMessage || 0]
       ) {
-        state.listItemsFormMessage[action.payload.index].content =
+        state.listItemsFormMessage[state.selectedItemFormMessage || 0].content =
           action.payload.content
+      }
+    },
+    deleteSelectedItemFormMessage(state) {
+      if (
+        state.listItemsFormMessage &&
+        state.listItemsFormMessage[state.selectedItemFormMessage || 0]
+      ) {
+        state.listItemsFormMessage.splice(state.selectedItemFormMessage || 0, 1)
+        state.selectedItemFormMessage = undefined
       }
     },
   },
@@ -73,6 +82,7 @@ export const {
   addItemFormMessage,
   setSelectedItemFormMessage,
   setContentItemFormMessage,
+  deleteSelectedItemFormMessage,
 } = selectedSendMessageDsBotSlice.actions
 export const selectedSendMessageDsBotReducer =
   selectedSendMessageDsBotSlice.reducer

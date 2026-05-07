@@ -22,7 +22,8 @@
       display: flex;
 
       .username {
-        font-weight: 500;
+        font-family: 'gg sans', sans-serif;
+
         color: var(--text-color);
       }
 
@@ -38,9 +39,8 @@
         background-color: #5865f2;
 
         span {
+          font-family: 'gg sans', sans-serif;
           font-size: 12px;
-          font-weight: 600;
-          margin-bottom: 2px;
         }
       }
 
@@ -53,7 +53,15 @@
     }
 
     .message {
+      font-family: 'gg sans', sans-serif;
       padding-top: 4px;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+    .text {
+      font-family: 'gg sans', sans-serif;
+      font-size: 16px;
     }
   }
 }

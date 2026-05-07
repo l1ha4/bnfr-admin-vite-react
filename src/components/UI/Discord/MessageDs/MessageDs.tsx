@@ -33,13 +33,13 @@ const MessageDs: FC<MessageDsProps> = ({ addClass, username, content, avatarUrl 
             ? content.map((item, index) => {
                 if (item.type === 'text') {
                   return (
-                    <span key={index} className={cl.text}>
+                    <span key={index} className={cl.text} >
                       {item.content}
                     </span>
                   )
                 }
                 if (item.type === 'embed') {
-                  return <EmbedBotDs key={index} {...item.content} />
+                  return <EmbedBotDs key={index} content={item.content}  />
                 }
                 return null
               })

@@ -34,7 +34,7 @@ const ListFormsMessageFSMDBTab: FC<ListFormsMessageFSMDBTabProps> = ({
         </ButtonTransparent>
       </div>
       <div className={cl.list}>
-        {arrList.length === 0 && <p>Пока нет форм сообщений...</p>}
+        {arrList.length === 0 && <p>Пока нет форм сообщений и сохранять нельзя(в разработке...)</p>}
         {arrList.map((item) => (
           <ButtonTransparent key={item.id} addClass={cl.item_list}>
             {item.name}

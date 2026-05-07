@@ -4,7 +4,7 @@ import type { FC } from 'react'
 import cl from './FormTextFSMDBTab.module.scss'
 import { useAppDispatch, useAppSelector } from '@/hooks/redux'
 import TextAreaTransparent from '@/components/UI/Transparent/TextAreaTransparent/TextAreaTransparent'
-import { setContentItemFormMessage } from '@/store/dsBots/StoreSendMessageDsBot/selectedSendMessageDsBot/selectedSendMessageDsBot.slice'
+import { deleteSelectedItemFormMessage, setContentItemFormMessage } from '@/store/dsBots/StoreSendMessageDsBot/selectedSendMessageDsBot/selectedSendMessageDsBot.slice'
 import ButtonTransparent from '@/components/UI/Transparent/ButtonTransparent/ButtonTransparent'
 
 interface FormTextFSMDBTabProps {
@@ -42,7 +42,6 @@ const FormTextFSMDBTab: FC<FormTextFSMDBTabProps> = ({ onTabChange }) => {
             if (listItemsFormMessage && selectedItemFormMessage !== undefined) {
               dispatch(
                 setContentItemFormMessage({
-                  index: selectedItemFormMessage,
                   content: e.target.value,
                 }),
               )
@@ -57,6 +56,16 @@ const FormTextFSMDBTab: FC<FormTextFSMDBTabProps> = ({ onTabChange }) => {
           onClick={() => onTabChange('formMessage')}
         >
           Вернуться назад
+        </ButtonTransparent>
+        <ButtonTransparent
+          iconSvg="delete"
+          styleColor="red"
+          onClick={() => {
+            dispatch(deleteSelectedItemFormMessage())
+            onTabChange('formMessage')
+          }}
+        >
+          удалить блок
         </ButtonTransparent>
       </div>
     </div>

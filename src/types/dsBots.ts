@@ -29,6 +29,19 @@ export interface IEmbedContent {
   title?: string
   text?: string
   colorLinear?: string
-  bigImageUrl?: string
-  smallImageUrl?: string
+  urlImageSide?: string
+  urlImageBottom?: string
+}
+
+export interface IFormMessageItem {
+  name: string
+  type: 'text' | 'embed'
+  content: string | IEmbedContent
+}
+
+export interface SendFormMessageBody {
+  botId: string
+  serverId: string
+  channelId: string
+  listItemsFormMessage: IFormMessageItem[]
 }

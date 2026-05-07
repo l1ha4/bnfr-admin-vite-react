@@ -1,7 +1,7 @@
 /* src\components\Discord\FormSendMessageDsBot\tabs\FormEmbedFSMDBTab\FormEmbedFSMDBTab.module.scss */
 
 .tab {
-  padding: 20px;
+  padding: 20px 0px 20px 20px;
   display: flex;
   height: 100%;
   flex-direction: column;
@@ -18,11 +18,40 @@
     }
   }
   .content {
+    padding-bottom: 10px;
+
+    flex: 1;
     width: 100%;
-    height: 100%;
+
+    .inputs {
+      margin-top: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+      overflow-y: auto;
+      scrollbar-width: thin;
+      scrollbar-color: #888 #2c2d32;
+      padding-right: 10px;
+      height: 380px;
+    }
+    .inputGroup {
+      h4 {
+        margin-bottom: 6px;
+        font-size: 18px;
+      }
+      .input {
+        width: 100%;
+      }
+    }
+    .selectedColor {
+      width: 100%;
+      height: 40px;
+      border-radius: 4px;
+    }
   }
   .footer {
     display: flex;
+    padding-right: 20px;
     justify-content: space-between;
   }
 }
