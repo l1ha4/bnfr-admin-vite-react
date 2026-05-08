@@ -1,12 +1,44 @@
 const normalizeApiUrl = (url: string): string => url.replace(/\/+$/, '')
 
-const rawApiUrl = import.meta.env.VITE_API_URL?.trim()
+const isLoopbackHost = (hostname: string): boolean =>
+  hostname === 'localhost' || hostname === '127.0.0.1'
 
-if (!rawApiUrl) {
+const getDevProxyApiUrl = (apiUrl?: string): string | null => {
+  if (typeof window === 'undefined' || !import.meta.env.DEV) {
+    return null
+  }
+
+  if (!isLoopbackHost(window.location.hostname)) {
+    return null
+  }
+
+  if (!apiUrl) {
+    return '/api'
+  }
+
+  const isAbsoluteHttpUrl = /^https?:\/\//i.test(apiUrl)
+
+  if (!isAbsoluteHttpUrl) {
+    return null
+  }
+
+  const parsedApiUrl = new URL(apiUrl)
+
+  if (!isLoopbackHost(parsedApiUrl.hostname)) {
+    return '/api'
+  }
+
+  return null
+}
+
+const rawApiUrl = import.meta.env.VITE_API_URL?.trim()
+const devProxyApiUrl = getDevProxyApiUrl(rawApiUrl)
+
+if (!rawApiUrl && !devProxyApiUrl) {
   throw new Error('VITE_API_URL is not set')
 }
 
-const API_URL = normalizeApiUrl(rawApiUrl)
+const API_URL = normalizeApiUrl(devProxyApiUrl ?? rawApiUrl ?? '')
 
 if (typeof window !== 'undefined') {
   const isHttpsPage = window.location.protocol === 'https:'
