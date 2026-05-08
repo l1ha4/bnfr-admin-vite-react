@@ -1,0 +1,32 @@
+/* src\components\Discord\FormSendMessageDsBot\FormSendMessageDsBot.module.scss */
+
+.component {
+  width: 74px;
+  height: 32px;
+  padding: 5px 10px;
+  display: flex;
+  align-items: center;
+  border: 1px solid rgba(125, 127, 140, 0.125);
+  border-radius: 8px;
+
+  .block {
+    width: 22px;
+    height: 22px;
+    border-radius: 2px;
+    background-color: #ff6969;
+    transition: all 0.3s ease;
+  }
+
+  .block.enabled {
+    transform: translateX(32px);
+    transition: all 0.3s ease;
+    background-color: #4caf50;
+  }
+
+  .block.not_enabled {
+    transition: all 0.3s ease;
+    background-color: #ff6969;
+  }
+
+  
+}

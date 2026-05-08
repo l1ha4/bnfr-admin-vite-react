@@ -8,8 +8,7 @@ import type {
   ServerChannel,
   Servers,
 } from '@/types/dsBots'
-
-const API_URL = import.meta.env.VITE_API_URL
+import { API_URL } from './api-url'
 
 const hexColorToDecimal = (color?: string): number | undefined => {
   if (!color) return undefined

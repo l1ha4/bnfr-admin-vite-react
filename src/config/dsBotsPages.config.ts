@@ -9,6 +9,7 @@ export const dsPages = {
         status: 'active',
         textButton: 'Перейти к настройке',
       },
+      
       workshop: {
         title: 'Мастерская настроек discord бота',
         status: 'dev',

@@ -6,6 +6,7 @@ export const titleRouter = {
   textButton: 'Перейти к разделу',
   sections: [
     { path: 'discord', title: 'Discord', status: 'active' },
+    {path: 'bonfire-id', title: 'Bonfire ID', status: 'active' },
     { path: null, title: 'Monopoly', status: 'dev' },
   ],
 } as const
