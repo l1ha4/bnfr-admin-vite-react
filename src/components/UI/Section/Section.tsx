@@ -17,7 +17,6 @@ const Section: FC<SectionProps> = ({
   addClass,
   title,
   status,
-  children,
   textButton,
   onClick,
 }) => {

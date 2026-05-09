@@ -25,8 +25,14 @@ const ListDsBotsPage: FC = () => {
     dispatch(fetchBots())
   }, [dispatch])
 
-  const handleBotClick = (botId: string, botName: string, botAvatar: string | null) => {
-    dispatch(setSelectedBotId({ id: botId, name: botName, avatarUrl: botAvatar }))
+  const handleBotClick = (
+    botId: string,
+    botName: string,
+    botAvatar: string | null,
+  ) => {
+    dispatch(
+      setSelectedBotId({ id: botId, name: botName, avatarUrl: botAvatar }),
+    )
     navigate(`/discord/bots/bot`)
   }
 
@@ -45,9 +51,9 @@ const ListDsBotsPage: FC = () => {
             <ItemDevDiscord
               key={bot.id}
               name={bot.name}
-              avatar={bot.avatar}
-              status={bot.status === 'ACTIVE'}
-              onClick={() => handleBotClick(bot.id, bot.name, bot.avatar)}
+              avatar={bot.avatarUrl ?? ''}
+              status={bot.status === 'online'}
+              onClick={() => handleBotClick(bot.id, bot.name, bot.avatarUrl)}
             />
           ))}
         <ItemPlusDevDs onClick={() => navigate('/discord/bots/add')} />

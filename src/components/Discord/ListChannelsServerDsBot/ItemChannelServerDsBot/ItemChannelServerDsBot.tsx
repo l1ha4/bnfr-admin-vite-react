@@ -1,6 +1,6 @@
 // src\components\Discord\ListChannelsServerDsBot\ItemChannelServerDsBot\ItemChannelServerDsBot.tsx
 
-import { Children, type FC } from 'react'
+import { type FC } from 'react'
 import cl from './ItemChannelServerDsBot.module.scss'
 
 interface ItemChannelServerDsBotProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {

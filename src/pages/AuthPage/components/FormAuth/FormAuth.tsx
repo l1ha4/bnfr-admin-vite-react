@@ -14,12 +14,8 @@ const FormAuth: FC = () => {
   const [loginInput, setLogin] = useState('')
   const [passwordInput, setPassword] = useState('')
 
-  const handleLogin = async() => {
-    // Логика авторизации
-    console.log('Логин:', loginInput)
-    console.log('Пароль:', passwordInput)
-
-    await login({ email: loginInput, password: passwordInput });
+  const handleLogin = async () => {
+    await login({ email: loginInput, password: passwordInput })
   }
   return (
     <div className={cl.component}>

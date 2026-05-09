@@ -43,7 +43,7 @@ const ListServersDsBotPage: FC = () => {
             <ItemDevDiscord
               key={server.id}
               name={server.name}
-              avatar={server.icon}
+              avatar={server.icon ?? ''}
               status={null}
               onClick={() => {
                 dispatch(

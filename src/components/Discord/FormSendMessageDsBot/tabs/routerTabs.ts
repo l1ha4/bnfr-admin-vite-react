@@ -1,11 +1,10 @@
-import type { IRouterTabTypes } from '@/components/UI/Tabs/types/default'
-import ListFormsMessageFSMDBTab from './ListFormsMessageFSMDBTab/ListFormsMessageFSMDBTab';
-import FormMessageFSMDBTab from './FormMessageFSMDBTab/FormMessageFSMDBTab';
-import FormTextFSMDBTab from './FormTextFSMDBTab/FormTextFSMDBTab';
-import FormEmbedFSMDBTab from './FormEmbedFSMDBTab/FormEmbedFSMDBTab';
+import type { IStateTabTypes } from '@/components/UI/Tabs/types/state'
+import ListFormsMessageFSMDBTab from './ListFormsMessageFSMDBTab/ListFormsMessageFSMDBTab'
+import FormMessageFSMDBTab from './FormMessageFSMDBTab/FormMessageFSMDBTab'
+import FormTextFSMDBTab from './FormTextFSMDBTab/FormTextFSMDBTab'
+import FormEmbedFSMDBTab from './FormEmbedFSMDBTab/FormEmbedFSMDBTab'
 
-
-export const routerTabs: IRouterTabTypes = [
+export const routerTabs: IStateTabTypes = [
   ['listFormsMessage', ListFormsMessageFSMDBTab],
   ['formMessage', FormMessageFSMDBTab],
   ['formMessageText', FormTextFSMDBTab],

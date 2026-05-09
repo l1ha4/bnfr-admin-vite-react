@@ -2,7 +2,6 @@
 
 import type { FC } from 'react'
 import cl from './MainPage.module.scss'
-import ButtonDefault from '@/components/UI/ButtonDefault/ButtonDefault'
 import { titleRouter } from '@/config/app.config'
 import { useNavigate } from 'react-router-dom'
 import Section from '@/components/UI/Section/Section'

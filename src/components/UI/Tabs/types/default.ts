@@ -1,3 +1,3 @@
-import { FС } from 'react'
+import type { ComponentType } from 'react'
 
-export type IRouterTabTypes = Array<[string, FС]>
+export type IRouterTabTypes = Array<[string, ComponentType<any>]>

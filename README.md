@@ -1,7 +1,7 @@
 ## Production API URL
 
-- Для cookie-auth с `credentials: 'include'` фронтенд и API должны быть по HTTPS.
-- Укажите API адрес в `VITE_API_URL`.
+- Рекомендуемый вариант: same-origin через reverse proxy и `VITE_API_URL=/api`.
+- Альтернатива: прямой HTTPS API URL (`https://api.example.com`), если CORS и cookie настроены корректно.
 - Пример production переменных: `.env.production.example`.
 
 ## Development API URL

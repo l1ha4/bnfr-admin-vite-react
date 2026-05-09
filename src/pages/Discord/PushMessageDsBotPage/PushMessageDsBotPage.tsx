@@ -13,14 +13,6 @@ import { setSelectedChannelId } from '@/store/dsBots/selectedDsBot/selectedDsBot
 import { botsApi } from '@/shared/api/dsBots.api'
 import ColorPickerDefault from '@/components/UI/ColorPickerDefault/ColorPickerDefault'
 
-interface Embed {
-  title: string
-  description: string
-  url: string
-  imageUrl: string
-}
-
-
 const PushMessageDsBotPage: FC = () => {
   const dispatch = useAppDispatch()
 
@@ -77,7 +69,14 @@ const PushMessageDsBotPage: FC = () => {
         </div>
         <div className={cl.block_messages}>
           <div>
-            <MessageDs username={selectedBotName || 'Bot'} text={messageText} />
+            <MessageDs
+              username={selectedBotName || 'Bot'}
+              content={
+                messageText
+                  ? [{ type: 'text', content: messageText }]
+                  : undefined
+              }
+            />
           </div>
           <div className={cl.block_create_message}>
             <h3>Новое сообщение</h3>
@@ -92,7 +91,6 @@ const PushMessageDsBotPage: FC = () => {
               </ButtonDefault>
               <ColorPickerDefault />
             </div>
-            
           </div>
         </div>
       </div>

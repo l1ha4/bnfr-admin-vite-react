@@ -16,6 +16,10 @@ interface FormEmbedFSMDBTabProps {
   onTabChange: (tab: string) => void
 }
 
+const isEmbedContent = (
+  content: string | IEmbedContent,
+): content is IEmbedContent => typeof content === 'object' && content !== null
+
 const FormEmbedFSMDBTab: FC<FormEmbedFSMDBTabProps> = ({ onTabChange }) => {
   const dispatch = useAppDispatch()
   const {
@@ -23,24 +27,23 @@ const FormEmbedFSMDBTab: FC<FormEmbedFSMDBTabProps> = ({ onTabChange }) => {
     listItemsFormMessage,
     selectedItemFormMessage,
   } = useAppSelector((state) => state.selectedSendMessageDsBot)
+
+  const selectedItemContent =
+    listItemsFormMessage && selectedItemFormMessage !== undefined
+      ? listItemsFormMessage[selectedItemFormMessage]?.content
+      : undefined
+
+  const selectedEmbedContent =
+    selectedItemContent && isEmbedContent(selectedItemContent)
+      ? selectedItemContent
+      : undefined
+
   const [formContent, setFormContent] = useState<IEmbedContent>({
-    title:
-      listItemsFormMessage && selectedItemFormMessage !== undefined
-        ? listItemsFormMessage[selectedItemFormMessage].content.title || ''
-        : '',
-    text:
-      listItemsFormMessage && selectedItemFormMessage !== undefined
-        ? listItemsFormMessage[selectedItemFormMessage].content.text || ''
-        : '',
-    colorLinear: listItemsFormMessage && selectedItemFormMessage !== undefined
-        ? listItemsFormMessage[selectedItemFormMessage].content.colorLinear || ''
-        : '',
-    urlImageSide: listItemsFormMessage && selectedItemFormMessage !== undefined
-        ? listItemsFormMessage[selectedItemFormMessage].content.urlImageSide || ''
-        : '',
-    urlImageBottom: listItemsFormMessage && selectedItemFormMessage !== undefined
-        ? listItemsFormMessage[selectedItemFormMessage].content.urlImageBottom || ''
-        : '',
+    title: selectedEmbedContent?.title || '',
+    text: selectedEmbedContent?.text || '',
+    colorLinear: selectedEmbedContent?.colorLinear || '',
+    urlImageSide: selectedEmbedContent?.urlImageSide || '',
+    urlImageBottom: selectedEmbedContent?.urlImageBottom || '',
   })
   return (
     <div className={cl.tab}>

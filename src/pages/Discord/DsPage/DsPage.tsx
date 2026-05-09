@@ -5,19 +5,13 @@ import cl from './DsPage.module.scss'
 import FormNavigate from '@/components/UI/Navigate/FormNavigate/FormNavigate'
 import { dsPages } from '@/config/dsBotsPages.config'
 import Section from '@/components/UI/Section/Section'
-import { useAppDispatch, useAppSelector } from '@/hooks/redux'
+import { useAppDispatch } from '@/hooks/redux'
 import { fetchBots } from '@/store/dsBots/listDsBots/listDsBots.slice'
 import { useNavigate } from 'react-router-dom'
 
 const DsPage: FC = () => {
   const dispatch = useAppDispatch()
   const navigate = useNavigate()
-
-  const {
-    items: bots,
-    isLoading,
-    error,
-  } = useAppSelector((state) => state.dsBots)
 
   useEffect(() => {
     dispatch(fetchBots())

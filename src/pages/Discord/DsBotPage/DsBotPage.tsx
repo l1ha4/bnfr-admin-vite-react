@@ -1,22 +1,18 @@
 // src\pages\DiscordBots\DsBotPage\DsBotPage.tsx
 
-import { useEffect, type FC } from 'react'
+import { type FC } from 'react'
 import cl from './DsBotPage.module.scss'
 import FormNavigate from '@/components/UI/Navigate/FormNavigate/FormNavigate'
 import { dsPages } from '@/config/dsBotsPages.config'
-import { useAppDispatch, useAppSelector } from '@/hooks/redux'
-import { fetchServers } from '@/store/dsBots/listServersDsBot/listServersDsBot.slice'
-import ItemDevDiscord from '@/components/UI/Discord/ItemDevDs/ItemDevDs'
+import { useAppSelector } from '@/hooks/redux'
 import { useNavigate } from 'react-router-dom'
-import { setSelectedServerId } from '@/store/dsBots/selectedDsBot/selectedDsBot.slice'
 import Section from '@/components/UI/Section/Section'
 
 const DsBotPage: FC = () => {
   const navigate = useNavigate()
-  
 
   const { selectedBotName } = useAppSelector((state) => state.selectedDsBot)
-  
+
   return (
     <div className={`page ${cl.page}`}>
       <FormNavigate
